@@ -1,0 +1,25 @@
+Model,Brand,Price,DSLR/Mirrorless,Sensor Type,Megapixels,4K Video,Slow Motion
+EOST8i,Canon,$750 ,DSLR,APS-C CMOS,24.1,24,60 
+80D,Canon,"$1,000 ",DSLR,APS-C CMOS,24.2,0, 60
+90D,Canon,"$1,200 ",DSLR,APS-C CMOS,32.5,30,120
+6D Mark II,Canon,"$1,400 ",DSLR,Full Frame CMOS,26.2,0,60
+5D Mark IV,Canon,"$2,500 ",DSLR,Full Frame CMOS,30.3,30,120
+EOS R,Canon,"$1,800 ",Mirrorless,Full Frame CMOS,30.3,30,60
+EOS RP,Canon,"$1,000 ",Mirrorless,Full Frame CMOS,26.2,24 ,60
+a6500,Sony,$800 ,Mirrorless,APS-C CMOS,24.2,0,60
+a6600,Sony,"$1,400 ",Mirrorless,APS-C CMOS,24.2,30,60
+a7II,Sony,"$1,400 ",Mirrorless,Full Frame CMOS,24.3,0,60
+a7III,Sony,"$2,000 ",Mirrorless,Full Frame CMOS,24.2,30,120
+a7RIV,Sony,"$3,500 ",Mirrorless,Full Frame CMOS,61.5,30,120
+a7RIII,Sony,"$2,800 ",Mirrorless,Full Frame CMOS,42.4,30,120
+Lumix GH4,Panasonic,$600 ,Mirrorless,Micro Four Thirds MOS,16,24,60
+Lumix GH5,Panasonic,"$1,400 ",Mirrorless,Micro Four Thirds MOS,20.3,60,60
+x-T30,Fujifilm,$900 ,Mirrorless,APS-C CMOS,26.1,30,120
+x100v,Fujifilm,"$1,400 ",Mirrorless,APS-C CMOS,26.1,30,60
+x-T100,Fujifilm,$500 ,Mirrorless,APS-C CMOS,24.2,15,50
+x-T3,Fujifilm,"$1,500 ",Mirrorless,APS-C CMOS,26.1,60,60
+x-T4,Fujifilm,"$1,700 ",Mirrorless,APS-C CMOS,26.1,60,120
+D750,Nikon,"$1,500 ",DSLR,Full Frame CMOS,24.3,0,60
+D850,Nikon,"$3,000 ",DSLR,Full Frame CMOS,45.7,30,120
+Z6,Nikon,"$1,800 ",Mirrorless,Full Frame CMOS,24.5,30,120
+Z7,Nikon,"$2,800 ",Mirrorless,Full Frame CMOS,45.7,30,120
