@@ -4,7 +4,7 @@ cameraPromise.then(function(cameras)
 {
     console.log("camera data",cameras);
     
-    var screen = {width:800, height:700};
+    var screen = {width:900, height:500};
     
     var margins = {top:15,bottom:40,left:70,right:15};
    
@@ -29,7 +29,7 @@ cameraPromise.then(function(cameras)
     var series = initGraph("svg",cameras,margins);
     drawStack(cameras,graph,xScale,yScale,series,colors)
 
-    createAxes(screen,margins,graph, "svg",xScale,yScale);
+    
     
     
 
@@ -123,25 +123,29 @@ var clearScatter = function(target)
 
 
 
+/*
+var tooltip = d3.select("svg")
+.append("text")
+.style("opacity", 0)
+.attr("class","tooltip")
 
-
-var createAxes = function(screen,margins,graph,
-                           target,xScale,yScale)
+var mouseover = function(cameras)
 {
-    var xAxis = d3.axisBottom(xScale);
-    var yAxis = d3.axisLeft(yScale);
-    
-    var axes = d3.select(target)
-        .append("g")
-    axes.append("g")
-        .attr("transform","translate("+margins.left+","
-             +(margins.top+graph.height)+")")
-        .call(xAxis)
-    axes.append("g")
-        .attr("transform","translate("+margins.left+","
-             +(margins.top)+")")
-        .call(yAxis)
-};
+    tooltip
+    .style("opacity",0)
+    .append("text")
+    .attr("src",function(cameras)
+      {
+    return "cameraPromise", ;
+});
+}
+
+var mouseleave= function(cameras)
+{
+ tooltip
+ .style("opacity",0)
+*/
+
 
 
 
