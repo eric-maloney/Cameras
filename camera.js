@@ -62,7 +62,7 @@ cameraPromise.then(function(cameras)
              margins.top+")");
 
     var stack = d3.stack() 
-    .keys([ "Megapixels", "4K Video", "Slow Motion" ]);
+    .keys([ "Megapixels", "4K Video FPS", "Slow Motion FPS" ]);
     
     series = stack(cameras); 
     return series;
@@ -85,7 +85,7 @@ cameraPromise.then(function(cameras)
         return colors[i];   
             });
 
-     //1
+     
      var rects = groups.selectAll("rect")    
      .data(function(d) 
            { 
@@ -113,6 +113,7 @@ cameraPromise.then(function(cameras)
 
 
 
+/*
 var clearScatter = function(target)
 {
     d3.select(target)
@@ -121,6 +122,7 @@ var clearScatter = function(target)
         .remove();
 }
 
+*/
 
 
 /*

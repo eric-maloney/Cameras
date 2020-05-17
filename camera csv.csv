@@ -1,4 +1,4 @@
-Model,Brand,Price,DSLR/Mirrorless,Sensor Type,Megapixels,4K Video,Slow Motion
+Model,Brand,Price,DSLR/Mirrorless,Sensor Type,Megapixels,4K Video FPS,Slow Motion FPS
 EOST8i,Canon,$750 ,DSLR,APS-C CMOS,24.1,24,60 
 80D,Canon,"$1,000 ",DSLR,APS-C CMOS,24.2,0, 60
 90D,Canon,"$1,200 ",DSLR,APS-C CMOS,32.5,30,120
