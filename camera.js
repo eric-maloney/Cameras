@@ -4,7 +4,7 @@ cameraPromise.then(function(cameras)
 {
     console.log("camera data",cameras);
     
-    var screen = {width:1000, height:500};
+    var screen = {width:1400, height:500};
     
     var margins = {top:15,bottom:40,left:70,right:15};
    
@@ -15,8 +15,15 @@ cameraPromise.then(function(cameras)
         height:screen.height-margins.top-margins.bottom,
     }
 
-    var xScale = d3.scaleLinear()
-            .domain([0,24])
+    var getName =function(camera)
+    {
+        return camera.Model
+    }
+    
+    var name =cameras.map(getName)
+    
+    var xScale = d3.scaleBand()
+            .domain(name)
             .range([0,graph.width])
 
         var yScale = d3.scaleLinear()
@@ -29,8 +36,8 @@ cameraPromise.then(function(cameras)
     var series = initGraph("svg",cameras,margins,screen);
     drawStack(cameras,graph,xScale,yScale,series,colors)
     drawToolTip(drawStack)
-    createAxes(screen,margins,graph,target,xScale,yScale)
-    createLegend(cameras,screen,margins,graph,target,colors)
+    createAxes(screen,margins,graph,"svg",xScale,yScale)
+    createLegend(cameras,screen,margins,graph,"svg",colors)
     
     
 
@@ -68,6 +75,9 @@ cameraPromise.then(function(cameras)
     series = stack(cameras); 
     return series;
     
+    
+    
+    
 };
 
  var drawStack = function(cameras,graph,xScale,yScale,series,colors)
@@ -93,12 +103,12 @@ cameraPromise.then(function(cameras)
      .enter()
      .append("rect")    
      .attr("x", function(d, i) 
-           {        
-         return xScale(i);    
+           {   
+         console.log("d=",d)
+         return xScale(d.data.Model);    
           })    
      .attr("y", function(d) 
            {       
-         console.log("d=",d)
          return yScale(d[1]);
            })    
      .attr("height", function(d) 
@@ -123,7 +133,10 @@ var drawToolTip = function(drawStack)
     d3.select("#tooltip div")
         .remove();
     
-    
+    if(!d3.event)
+        {
+            return
+        }
     var xPosition = d3.event.pageX;
     var yPosition = d3.event.pageY;
 
@@ -133,24 +146,25 @@ var drawToolTip = function(drawStack)
         .style("top",yPosition+"px")
         .style("left",xPosition+"px")
         .append("div")
-        .text(drawStack[1])
+        .text(drawStack[1]-drawStack[0])
           
 };
 
 var createAxes = function(screen,margins,graph,
                            target,xScale,yScale)
 {
+    console.log("hello",target)
     var xAxis = d3.axisBottom(xScale);
     var yAxis = d3.axisLeft(yScale);
     
-    var axes = d3.select("graph")
+    var axes = d3.select(target)
         .append("g")
     axes.append("g")
-        .attr("transform","translate("+margins.left+","
+        .attr("transform","translate("+margins.left/14+","
              +(margins.top+graph.height)+")")
         .call(xAxis)
     axes.append("g")
-        .attr("transform","translate("+margins.left+","
+        .attr("transform","translate("+margins.left/18+","
              +(margins.top)+")")
         .call(yAxis)
 }
@@ -166,8 +180,8 @@ var createLegend = function(cameras,screen,margins,graph,
         .append("g")
         .classed("legend",true)
         .attr("transform","translate("+
-              (margins.left+ 10) +","+
-             (margins.top+(graph.height/1.5))+")");
+              (margins.left+ 0) +","+
+             (margins.top+(graph.height/20))+")");
     
     var entries = legend.selectAll("g")
         .data(["Megapixels","4K Video FPS","Slow Motion FPS"])
